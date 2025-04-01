@@ -1,0 +1,155 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased; 
+    text-rendering: optimizeLegibility; 
+    font-family: 'Satoshi', sans-serif;
+}
+
+body{
+    background-color: rgb(255, 213, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bubu{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.question{
+    position: relative;
+}
+
+.question h1{
+    margin: .5em 0;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1em;
+    margin-top: 1em;
+}
+
+.buttons button{
+    background-color: rgb(255, 18, 18);
+    padding: .8em 1.5em;
+    color: #fff;
+    border-radius: 50px;
+    border: 0;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#no{
+    position: absolute;
+    top: 277px;
+    left: 155px;
+}
+
+.buttons button:hover{
+    transition: .5s;
+    background-color: rgb(253, 92, 92);
+    box-shadow: rgba(255, 69, 69, 0.25) 0px 54px 55px, rgba(255, 105, 105, 0.12) 0px -12px 30px, rgba(255, 8, 8, 0.12) 0px 4px 6px, rgba(255, 31, 31, 0.17) 0px 12px 13px, rgba(255, 39, 39, 0.09) 0px -3px 5px;
+}
+
+#next, #sayYes{
+    display: none;
+}
+
+.heart {
+    background: red;
+    position: relative;
+    height: 50px;
+    width:50px;
+    transform: rotate(-45deg);
+    animation: rotation 2s ease-in-out;
+    animation-delay: .5s;
+}
+
+
+.heart::after {
+    background:inherit;
+    border-radius: 50%;
+    content:'';
+    position:absolute;
+    top: -50%; 
+    left: 0px;
+    height: 50px;
+    width:50px;
+    animation: removeafter 2s ease-in-out;
+    animation-delay: .5s;
+}
+.heart::before {
+    background:inherit; 
+    border-radius: 50%;
+    content:'';
+    position:absolute;
+    top:0; 
+    right:-50%; 
+    height: 50px;
+    width:50px;
+    animation: removebefore 2s ease-in-out;
+    animation-delay: .5s;
+}
+
+.shadow{
+    width: 50px;
+    height: 10px;
+    background: rgb(201, 200, 200);
+    position: absolute;
+    top: 59%;
+    border-radius: 100%;
+    animation: shadows 2s ease-in-out;
+    animation-delay: .5s;
+}
+
+@keyframes rotation{
+    0%{
+        transform: rotate(-45deg);
+        border-radius: 0;
+    }
+    50% { transform: rotate(360deg); border-radius: 100%}
+    100% { transform: rotate(765deg); border-radius: 0}
+}
+
+@keyframes removeafter{
+    0%{
+        top: -50%
+    }
+    50%{ top: 0;}
+    100%{ top: -50%;}
+}
+
+@keyframes removebefore{
+    0%{
+        right: -50%;
+    }
+    30%{
+        right: -35%
+    }
+    50%{ right: 0;}
+    100%{ right: 50%;}
+}
+
+@keyframes shadows{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(0.2);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
